@@ -164,7 +164,21 @@ require('lazy').setup({
         map('v', '<leader>hr', function()
           gs.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
         end, { desc = 'reset git hunk' })
+
         -- normal mode
+        vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+          pattern = { "*" },
+          command = [[%s/\s\+$//e]],
+        })
+        map('n', '<leader>ww', ':w<CR>') -- quicksave and trim whitespace
+        map('n', '<leader>ex', ':Ex') -- quick netrw
+        map('n', '<leader>f', 'F') -- I just don't like having to shift F for backwards search
+        -- some movement binds I like
+        map('n', '<leader>l', '$')
+        map('n', '<leader>h', '_')
+        map('n', '<C-u>', '<C-u>zz')
+        map('n', '<C-s>', '<C-d>zz')
+        -- below is what comes with kickstart by default
         map('n', '<leader>hs', gs.stage_hunk, { desc = 'git stage hunk' })
         map('n', '<leader>hr', gs.reset_hunk, { desc = 'git reset hunk' })
         map('n', '<leader>hS', gs.stage_buffer, { desc = 'git Stage buffer' })
@@ -274,7 +288,7 @@ require('lazy').setup({
 -- NOTE: You can change these options as you wish!
 
 -- Set highlight on search
-vim.o.hlsearch = false
+vim.o.hlsearch = true
 
 -- Make line numbers default
 vim.wo.number = true
@@ -664,3 +678,7 @@ cmp.setup {
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+--
+vim.opt.nu = true
+vim.opt.rnu = true
+--
