@@ -1,0 +1,24 @@
+-- keymap = vim.keymap.set
+-- local nmap = function(keys, func, desc)
+-- 	if desc then
+-- 		desc = 'LSP: ' .. desc
+-- 	end
+--
+-- 	vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
+-- end
+-- keymap('n', '<leader>ww', ':w<CR>')  -- quicksave and trim whitespace
+-- keymap('n', '<leader>ex', ':Ex<CR>') -- quick netrw
+-- keymap('n', '<leader>f', 'F')        -- I just don't like having to shift F for backwards search
+-- -- some movement binds I like
+-- keymap('n', '<leader>l', '$')
+-- keymap('n', '<leader>h', '_')
+-- keymap('n', '<C-u>', '<C-u>zz')
+-- keymap('n', '<C-s>', '<C-d>zz')
+--
+--
+-- -- --  harpoon keymaps
+-- -- local mark = require('harpoon.ui')
+-- -- local ui = require('harpoon.ui')
+-- --
+-- -- keymap('n', '<leader>qw', mark.add_file)
+-- -- keymap('n', '<C-h>', ui.toggle_quick_menu)
