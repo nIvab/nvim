@@ -711,7 +711,7 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', '<C-s>', '<C-d>zz')
 
 
-require("lua.custom.plugins.harpoon")
+-- require("lua.custom.plugins.harpoon")
 --  harpoon keymaps
 -- vim.keymap.set('n', '<leader>qw', ':harpoon.mark.add')
 -- vim.keymap.set('<C-h>', ':harpoon.ui.toggle_quick_menu', 'Harpoon: toggle quick menu')
