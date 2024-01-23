@@ -170,9 +170,9 @@ require('lazy').setup({
                     pattern = { "*" },
                     command = [[%s/\s\+$//e]],
                 })
-                map('n', '<leader>ww', ':w<CR>')  -- quicksave and trim whitespace
-                map('n', '<leader>ex', ':Ex<CR>') -- quick netrw
-                map('n', '<leader>f', 'F')        -- I just don't like having to shift F for backwards search
+                map('n', '<leader>ww', ':w<CR>')   -- quicksave and trim whitespace
+                map('n', '<leader>ex', ':Oil<CR>') -- quick netrw
+                map('n', '<leader>f', 'F')         -- I just don't like having to shift F for backwards search
                 -- some movement binds I like
                 map('n', '<leader>l', '$')
                 map('n', '<leader>h', '_')
@@ -426,8 +426,8 @@ local function telescope_live_grep_open_files()
         prompt_title = 'Live Grep in Open Files',
     }
 end
-vim.keymap.set('n', '<leader>s/', telescope_live_grep_open_files, { desc = '[S]earch [/] in Open Files' })
-vim.keymap.set('n', '<leader>ss', require('telescope.builtin').builtin, { desc = '[S]earch [S]elect Telescope' })
+vim.keymap.set('n', '<leader>ss', telescope_live_grep_open_files, { desc = '[S]earch files in Telescope' })
+vim.keymap.set('n', '<leader>s/', require('telescope.builtin').builtin, { desc = '[S]earch [/] select Telescope' })
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
 vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
