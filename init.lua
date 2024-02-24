@@ -170,9 +170,8 @@ require('lazy').setup({
                     pattern = { "*" },
                     command = [[%s/\s\+$//e]],
                 })
-                map('n', '<leader>ww', ':w<CR>')   -- quicksave and trim whitespace
-                map('n', '<leader>ex', ':Oil<CR>') -- quick netrw
-                map('n', '<leader>f', 'F')         -- I just don't like having to shift F for backwards search
+                map('n', '<leader>ww', ':w<CR>') -- quicksave and trim whitespace
+                map('n', '<leader>f', 'F')       -- I just don't like having to shift F for backwards search
                 -- some movement binds I like
                 map('n', '<leader>l', '$')
                 map('n', '<leader>h', '_')
@@ -693,24 +692,28 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
-vim.keymap.set('n', '<leader>ww', ':w<CR>')  -- quicksave and trim whitespace
-vim.keymap.set('n', '<leader>ex', ':Ex<CR>') -- quick netrw
-vim.keymap.set('n', '<leader>f', 'F')        -- I just don't like having to shift F for backwards search
+vim.keymap.set('n', '<leader>ww', ':w<CR>') -- quicksave and trim whitespace
+vim.keymap.set('n', '<leader>f', 'F')       -- I just don't like having to shift F for backwards search
+
+vim.keymap.set('n', '<leader>ww', ':w<CR>') -- quicksave and trim whitespace
+vim.keymap.set('n', '<leader>f', 'F')       -- I just don't like having to shift F for backwards search
 -- some movement binds I like
 vim.keymap.set('n', '<leader>l', '$')
 vim.keymap.set('n', '<leader>h', '_')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', '<C-s>', '<C-d>zz')
 
-vim.keymap.set('n', '<leader>ww', ':w<CR>')  -- quicksave and trim whitespace
-vim.keymap.set('n', '<leader>ex', ':Ex<CR>') -- quick netrw
-vim.keymap.set('n', '<leader>f', 'F')        -- I just don't like having to shift F for backwards search
--- some movement binds I like
-vim.keymap.set('n', '<leader>l', '$')
-vim.keymap.set('n', '<leader>h', '_')
-vim.keymap.set('n', '<C-u>', '<C-u>zz')
-vim.keymap.set('n', '<C-s>', '<C-d>zz')
-
+-- Tabby
+-- (I really should clean up this thing)
+vim.api.nvim_set_keymap("n", "<leader>Ta", ":$tabnew<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>Tc", ":tabclose<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>To", ":tabonly<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>j", ":tabn<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>k", ":tabp<CR>", { noremap = true })
+-- move current tab to previous position
+vim.api.nvim_set_keymap("n", "<leader>Tmp", ":-tabmove<CR>", { noremap = true })
+-- move current tab to next position
+vim.api.nvim_set_keymap("n", "<leader>Tmn", ":+tabmove<CR>", { noremap = true })
 
 -- require("lua.custom.plugins.harpoon")
 --  harpoon keymaps
